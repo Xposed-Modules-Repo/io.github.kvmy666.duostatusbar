@@ -3,7 +3,7 @@
 [![Downloads](https://img.shields.io/github/downloads/kvmy666/duoStatusBar/total?label=downloads)](https://github.com/kvmy666/duoStatusBar/releases)
 [![Latest release](https://img.shields.io/github/v/release/kvmy666/duoStatusBar)](https://github.com/kvmy666/duoStatusBar/releases)
 [![CI](https://github.com/kvmy666/duoStatusBar/actions/workflows/ci.yml/badge.svg)](https://github.com/kvmy666/duoStatusBar/actions/workflows/ci.yml)
-[![Android 15+](https://img.shields.io/badge/Android-15%2B-3ddc84)](https://developer.android.com)
+[![Android 14+](https://img.shields.io/badge/Android-14%2B-3ddc84)](https://developer.android.com)
 [![LSPosed](https://img.shields.io/badge/LSPosed-module-8a2be2)](https://modules.lsposed.org/module/io.github.kvmy666.duostatusbar)
 
 <p align="center">
@@ -48,9 +48,10 @@ That's it. The module is **off until you switch it on**, so nothing changes unti
 
 ## ✅ What you need
 
-* Android **15 or newer** on a custom ROM, rooted with **LSPosed**.
+* Android **14 or newer** on a custom ROM, rooted with **LSPosed**.
 * Tested on **OnePlus 15 / OxygenOS 16 (Android 16)** with KernelSU + LSPosed 2.2.0.
-* Other ROMs are welcome — if something looks off, tell me and I'll add support.
+* Android 14, ColorOS 16 and Samsung One UI are recognised with best-effort ids; a debug report
+  measures the rest.
 
 ## 🛟 Safe by design
 
@@ -105,7 +106,7 @@ Never — you can show it inside the ring, or hide it and keep the shape.
 Flip the master switch off, or run the kill switch above. Your stock status bar comes right back.
 
 **Does it work on my phone?**
-It's made for custom-ROM Android 15+ with LSPosed. If it isn't tested on your device yet, try it — and if
+It's made for custom-ROM Android 14+ with LSPosed. If it isn't tested on your device yet, try it — and if
 something looks wrong, send me a report.
 
 ## 🐞 Bugs and feedback
