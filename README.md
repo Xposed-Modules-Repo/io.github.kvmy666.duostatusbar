@@ -6,6 +6,10 @@
 [![Android 15+](https://img.shields.io/badge/Android-15%2B-3ddc84)](https://developer.android.com)
 [![LSPosed](https://img.shields.io/badge/LSPosed-module-8a2be2)](https://modules.lsposed.org/module/io.github.kvmy666.duostatusbar)
 
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/kvmy666/duoStatusBar@main/docs/media/icon.png" width="120" alt="Duo Status Bar icon">
+</p>
+
 **Your status bar, but beautiful.** Duo Status Bar turns the battery, Wi-Fi and signal icons into one
 smooth, Apple-style element — a battery ring with the percentage tucked into its gap, Wi-Fi arcs, cellular
 spheres and a charging bolt that flies into place. It is animated with [Rive](https://rive.app), and it is
@@ -70,9 +74,9 @@ Open the app and you'll find:
 
 | Section | What you can do |
 |---|---|
-| **Battery icon** | Turn it on, show or hide the percentage, change the **size**, drag the **position** |
+| **Battery icon** | Turn it on, show or hide the percentage, change the **size**, drag the **position**, and choose whether changes apply **live** or after a restart |
 | **Animations** | A master switch, an animation **speed**, and separate toggles for **Appear**, **Disappear** and **Charging** |
-| **Appearance** | Use **smooth graphics** (turn off if your phone ever feels slow) |
+| **Appearance** | Use **smooth graphics** (turn off if your phone ever feels slow), and draw the status-bar **clock in the system font** so it matches the ring |
 | **Tap actions** | Choose what a single tap, double tap and long press do (with Auto Expand) |
 | **About** | See the module's status, share a report, or support the developer |
 
