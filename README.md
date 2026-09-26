@@ -77,7 +77,8 @@ Open the app and you'll find:
 |---|---|
 | **Battery icon** | Turn it on, show or hide the percentage, change the **size**, drag the **position**, and choose whether changes apply **live** or after a restart |
 | **Animations** | A master switch, an animation **speed**, and separate toggles for **Appear**, **Disappear** and **Charging** |
-| **Appearance** | Use **smooth graphics** (turn off if your phone ever feels slow), and draw the status-bar **clock in the system font** so it matches the ring |
+| **Appearance** | **Icon colour** (match the status bar, or force black/white), **smooth graphics**, and the status-bar **clock in the system font** |
+| **Status bar icons** | Choose whether the **other icons** (silent, vibrate, alarm…) stay hidden, and optionally hide your phone's own Wi-Fi, cellular and battery icons with **Shizuku** |
 | **Tap actions** | Choose what a single tap, double tap and long press do (with Auto Expand) |
 | **About** | See the module's status, share a report, or support the developer |
 
@@ -85,6 +86,15 @@ Open the app and you'll find:
 
 Changing the **size** asks for a restart (there's a **Restart System UI** button right there) — it's the one
 setting that can't safely change while the bar is running.
+
+**Status bar icons** is an optional extra. Duo normally hides the stock icons itself from inside System UI;
+if your ROM still shows them beside the ring, you can let the app hide them at the system level with
+**[Shizuku](https://shizuku.rikka.app)**. It only writes the secure `icon_blacklist` setting, it is off by
+default, and without Shizuku nothing changes.
+
+**Icon colour** is automatic by default: the element reads the status bar's own icon tint and matches it
+(black on a light bar, white on a dark one), falling back to your day/night setting. You can also force
+Black or White.
 
 ## 👆 Tap actions (optional)
 
