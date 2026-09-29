@@ -24,9 +24,12 @@ No system files are touched. Nothing is patched. The module only *draws*.
 * **One icon instead of three.** Battery, Wi-Fi and cellular become a single ring — clean and calm.
 * **The percentage lives inside the ring**, so you get the number *and* the shape at a glance.
 * **It changes colour for you:** green while charging, yellow in power saver, red under 20 %.
-* **Real signal at a glance:** Wi-Fi arcs light up as the signal grows, four spheres show your bars.
+* **Real signal at a glance:** Wi-Fi arcs light up as the signal grows, four spheres show your bars — and on
+  a dual-SIM phone you choose which line the spheres follow.
 * **A charging story:** plug in and the lightning bolt rises from the middle of the ring into the top gap.
 * **Airplane, Do Not Disturb and 5G** slide into the middle — and back out — with a soft morph.
+* **Network icons only, if you want:** one switch keeps the middle to Wi-Fi and 5G/4G and never lets
+  Do Not Disturb or Airplane take it.
 * **Make it yours:** size, position, animation speed, and which animations you want (or none at all).
 * **Tap it (optional):** hand taps to the [Auto Expand](https://github.com/kvmy666/AutoExpandNotifications)
   module to toggle Wi-Fi, Do Not Disturb, airplane mode or power saving.
@@ -77,8 +80,8 @@ Open the app and you'll find:
 |---|---|
 | **Battery icon** | Turn it on, show or hide the percentage, change the **size**, drag the **position**, and choose whether changes apply **live** or after a restart |
 | **Animations** | A master switch, an animation **speed**, and separate toggles for **Appear**, **Disappear** and **Charging** |
-| **Appearance** | **Icon colour** (match the status bar, or force black/white), **smooth graphics**, and the status-bar **clock in the system font** |
-| **Status bar icons** | Choose whether the **other icons** (silent, vibrate, alarm…) stay hidden, and optionally hide your phone's own Wi-Fi, cellular and battery icons with **Shizuku** |
+| **Appearance** | **Icon colour** (match the status bar, or force black/white), **smooth graphics**, the status-bar **clock in the system font**, and **Show only Wi-Fi and 5G/4G** (never DND or Airplane in the ring) |
+| **Status bar icons** | Your other icons (silent, vibrate, alarm, network speed…) stay visible by default; you can hide them if you prefer, and optionally hide your phone's own Wi-Fi, cellular and battery icons with **Shizuku** |
 | **Tap actions** | Choose what a single tap, double tap and long press do (with Auto Expand) |
 | **About** | See the module's status, share a report, or support the developer |
 
@@ -102,6 +105,10 @@ Taps on the element are handled by my other module,
 **[Auto Expand](https://github.com/kvmy666/AutoExpandNotifications)**, which owns the actions. This keeps
 things simple and safe: **Duo draws, Auto Expand acts.** With the default "No Action", the element doesn't
 consume a single touch — so your usual status bar gestures keep working untouched.
+
+## 🛠️ Technical Fixes
+
+* **Android 16 GSI / Late Injection Fix:** On certain Android 16 GSI ROMs (e.g., DerpFest) and with newer hooking frameworks like Vector, `SystemUI` may already be running by the time the module is injected, or the system might bypass the standard `android.app.Application.onCreate` lifecycle. The module now explicitly hooks `com.android.systemui.SystemUIApplication` and includes a fallback to detect if `ActivityThread.currentApplication()` is already active, ensuring instant initialization without hanging indefinitely.
 
 ## ❓ Questions people ask
 
