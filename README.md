@@ -3,7 +3,7 @@
 [![Downloads](https://img.shields.io/github/downloads/kvmy666/duoStatusBar/total?label=downloads)](https://github.com/kvmy666/duoStatusBar/releases)
 [![Latest release](https://img.shields.io/github/v/release/kvmy666/duoStatusBar)](https://github.com/kvmy666/duoStatusBar/releases)
 [![CI](https://github.com/kvmy666/duoStatusBar/actions/workflows/ci.yml/badge.svg)](https://github.com/kvmy666/duoStatusBar/actions/workflows/ci.yml)
-[![Android 14+](https://img.shields.io/badge/Android-14%2B-3ddc84)](https://developer.android.com)
+[![Android 13+](https://img.shields.io/badge/Android-13%2B-3ddc84)](https://developer.android.com)
 [![LSPosed](https://img.shields.io/badge/LSPosed-module-8a2be2)](https://modules.lsposed.org/module/io.github.kvmy666.duostatusbar)
 
 <p align="center">
@@ -51,10 +51,10 @@ That's it. The module is **off until you switch it on**, so nothing changes unti
 
 ## ✅ What you need
 
-* Android **14 or newer** on a custom ROM, rooted with **LSPosed**.
+* Android **13 or newer** on a custom ROM, rooted with **LSPosed**.
 * Tested on **OnePlus 15 / OxygenOS 16 (Android 16)** with KernelSU + LSPosed 2.2.0.
-* Android 14, ColorOS 16 and Samsung One UI are recognised with best-effort ids; a debug report
-  measures the rest.
+* Android 13, ColorOS/realme, HyperOS, Samsung One UI and Pixel are recognised with best-effort ids; a
+  diagnostic report measures the rest.
 
 ## 🛟 Safe by design
 
