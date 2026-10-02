@@ -2,149 +2,69 @@
 
 [![Downloads](https://img.shields.io/github/downloads/kvmy666/duoStatusBar/total?label=downloads)](https://github.com/kvmy666/duoStatusBar/releases)
 [![Latest release](https://img.shields.io/github/v/release/kvmy666/duoStatusBar)](https://github.com/kvmy666/duoStatusBar/releases)
-[![CI](https://github.com/kvmy666/duoStatusBar/actions/workflows/ci.yml/badge.svg)](https://github.com/kvmy666/duoStatusBar/actions/workflows/ci.yml)
 [![Android 13+](https://img.shields.io/badge/Android-13%2B-3ddc84)](https://developer.android.com)
-[![LSPosed](https://img.shields.io/badge/LSPosed-module-8a2be2)](https://modules.lsposed.org/module/io.github.kvmy666.duostatusbar)
+
+Duo Status Bar replaces the battery, Wi-Fi and mobile signal icons in your status bar with one clean,
+animated indicator.
+
+It is an LSPosed module. It does not modify system files. It only hides the icons it replaces and draws
+the new indicator. You can turn it off at any time, and your original icons come back exactly as they
+were.
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/kvmy666/duoStatusBar@main/docs/media/icon.png" width="120" alt="Duo Status Bar icon">
+  <img src="https://cdn.jsdelivr.net/gh/kvmy666/duoStatusBar@main/docs/media/status-bar.png" width="360" alt="Duo Status Bar in the status bar">
 </p>
 
-**Your status bar, but beautiful.** Duo Status Bar turns the battery, Wi-Fi and signal icons into one
-smooth, Apple-style element — a battery ring with the percentage tucked into its gap, Wi-Fi arcs, cellular
-spheres and a charging bolt that flies into place. It is animated with [Rive](https://rive.app), and it is
-built to be switched off the instant you want your old bar back.
+## Requirements
 
-No system files are touched. Nothing is patched. The module only *draws*.
+- Android 13 or newer.
+- A custom ROM with root.
+- LSPosed installed.
 
-<img src="https://cdn.jsdelivr.net/gh/kvmy666/duoStatusBar@main/docs/media/status-bar.png" width="360" alt="The Duo element in the real status bar">
+## Install
 
-## ✨ What it does
+1. Download the APK from [Releases](https://github.com/kvmy666/duoStatusBar/releases) and install it.
+2. Open LSPosed, go to Modules, and enable Duo Status Bar.
+3. In the module's scope, tick **System UI**.
+4. Restart System UI, or reboot the phone.
+5. Open the Duo Status Bar app and turn the main switch on.
 
-* **One icon instead of three.** Battery, Wi-Fi and cellular become a single ring — clean and calm.
-* **The percentage lives inside the ring**, so you get the number *and* the shape at a glance.
-* **It changes colour for you:** green while charging, yellow in power saver, red under 20 %.
-* **Real signal at a glance:** Wi-Fi arcs light up as the signal grows, four spheres show your bars — and on
-  a dual-SIM phone you choose which line the spheres follow.
-* **A charging story:** plug in and the lightning bolt rises from the middle of the ring into the top gap.
-* **Airplane, Do Not Disturb and 5G** slide into the middle — and back out — with a soft morph.
-* **Network icons only, if you want:** one switch keeps the middle to Wi-Fi and 5G/4G and never lets
-  Do Not Disturb or Airplane take it.
-* **Make it yours:** size, position, animation speed, and which animations you want (or none at all).
-* **Tap it (optional):** hand taps to the [Auto Expand](https://github.com/kvmy666/AutoExpandNotifications)
-  module to toggle Wi-Fi, Do Not Disturb, airplane mode or power saving.
+The module is off until you turn it on. Nothing changes before that.
 
-## 🎬 See it in the app
+## Settings
 
-Every animation has a live demo right next to its switch, so you can see exactly what you are turning on or off:
+- **Battery icon** - show or hide the percentage, change the size, and move the position.
+- **Animations** - turn animations on or off, and set the speed.
+- **Appearance** - icon colour, smooth graphics, the clock font, and what appears in the middle.
+- **Status bar icons** - keep your other icons visible beside the indicator, or hide them.
+- **Tap actions** - optional. Handled by the Auto Expand module.
+- **About** - see the module status and send a report.
 
-<img src="https://cdn.jsdelivr.net/gh/kvmy666/duoStatusBar@main/docs/media/app-animations.png" width="300" alt="The Animations section with live demos for Appear, Disappear and Charging">
+Changing the size needs a System UI restart. The app has a button for it.
 
-## 📲 Install (about two minutes)
+## Turn it off
 
-1. Download the APK from **[Releases](https://github.com/kvmy666/duoStatusBar/releases)** and install it.
-2. Open **LSPosed → Modules**, enable **Duo Status Bar**, and tick **System UI** in its scope.
-3. **Restart System UI** (or just reboot).
-4. Open the **Duo Status Bar** app and flip the master switch on.
+Use the switch in the app, or run one of these commands:
 
-That's it. The module is **off until you switch it on**, so nothing changes until *you* say so.
+```text
+adb shell settings put global duo_statusbar_stage 0   # off
+adb shell settings put global duo_statusbar_stage 1   # simple drawing, no native code
+adb shell settings put global duo_statusbar_stage 2   # full animation
+```
 
-## ✅ What you need
+## If something goes wrong
 
-* Android **13 or newer** on a custom ROM, rooted with **LSPosed**.
-* Tested on **OnePlus 15 / OxygenOS 16 (Android 16)** with KernelSU + LSPosed 2.2.0.
-* Android 13, ColorOS/realme, HyperOS, Samsung One UI and Pixel are recognised with best-effort ids; a
-  diagnostic report measures the rest.
+- Issues: https://github.com/kvmy666/duoStatusBar/issues
+- Telegram: https://t.me/kvmy1
 
-## 🛟 Safe by design
+Send a report from the app's **About** section. It includes your device details and the logs, which
+makes the problem much easier to find.
 
-* **Off means off.** With the default settings the module hooks nothing, hides nothing, and doesn't even
-  swallow a tap.
-* **Your icons come back.** The stock icons are only *hidden*, and their original look is remembered — turn
-  the module off and they return exactly as they were.
-* **It can't crash-loop your phone.** If the graphics ever fail twice, the module quietly falls back to a
-  simple drawing instead of trying again.
-* **A kill switch that always works**, even if the app won't open:
+## Support
 
-  ```powershell
-  adb shell settings put global duo_statusbar_stage 0   # off
-  adb shell settings put global duo_statusbar_stage 1   # simple drawing, no native code
-  adb shell settings put global duo_statusbar_stage 2   # full animation
-  ```
-
-## 🎛️ Make it yours
-
-Open the app and you'll find:
-
-| Section | What you can do |
-|---|---|
-| **Battery icon** | Turn it on, show or hide the percentage, change the **size**, drag the **position**, and choose whether changes apply **live** or after a restart |
-| **Animations** | A master switch, an animation **speed**, and separate toggles for **Appear**, **Disappear** and **Charging** |
-| **Appearance** | **Icon colour** (match the status bar, or force black/white), **smooth graphics**, the status-bar **clock in the system font**, and **Show only Wi-Fi and 5G/4G** (never DND or Airplane in the ring) |
-| **Status bar icons** | Your other icons (silent, vibrate, alarm, network speed…) stay visible by default; you can hide them if you prefer, and optionally hide your phone's own Wi-Fi, cellular and battery icons with **Shizuku** |
-| **Tap actions** | Choose what a single tap, double tap and long press do (with Auto Expand) |
-| **About** | See the module's status, share a report, or support the developer |
-
-<img src="https://cdn.jsdelivr.net/gh/kvmy666/duoStatusBar@main/docs/media/app.png" width="300" alt="The Duo Status Bar settings screen">
-
-Changing the **size** asks for a restart (there's a **Restart System UI** button right there) — it's the one
-setting that can't safely change while the bar is running.
-
-**Status bar icons** is an optional extra. Duo normally hides the stock icons itself from inside System UI;
-if your ROM still shows them beside the ring, you can let the app hide them at the system level with
-**[Shizuku](https://shizuku.rikka.app)**. It only writes the secure `icon_blacklist` setting, it is off by
-default, and without Shizuku nothing changes.
-
-**Icon colour** is automatic by default: the element reads the status bar's own icon tint and matches it
-(black on a light bar, white on a dark one), falling back to your day/night setting. You can also force
-Black or White.
-
-## 👆 Tap actions (optional)
-
-Taps on the element are handled by my other module,
-**[Auto Expand](https://github.com/kvmy666/AutoExpandNotifications)**, which owns the actions. This keeps
-things simple and safe: **Duo draws, Auto Expand acts.** With the default "No Action", the element doesn't
-consume a single touch — so your usual status bar gestures keep working untouched.
-
-## 🛠️ Technical Fixes
-
-* **Android 16 GSI / Late Injection Fix:** On certain Android 16 GSI ROMs (e.g., DerpFest) and with newer hooking frameworks like Vector, `SystemUI` may already be running by the time the module is injected, or the system might bypass the standard `android.app.Application.onCreate` lifecycle. The module now explicitly hooks `com.android.systemui.SystemUIApplication` and includes a fallback to detect if `ActivityThread.currentApplication()` is already active, ensuring instant initialization without hanging indefinitely.
-
-## ❓ Questions people ask
-
-**Will this slow down my phone?**
-No. It's one small drawing in the status bar. If you ever want zero animation, the Animations master switch
-turns it all off.
-
-**Do I lose my battery percentage?**
-Never — you can show it inside the ring, or hide it and keep the shape.
-
-**What if I don't like it?**
-Flip the master switch off, or run the kill switch above. Your stock status bar comes right back.
-
-**Does it work on my phone?**
-It's made for custom-ROM Android 14+ with LSPosed. If it isn't tested on your device yet, try it — and if
-something looks wrong, send me a report.
-
-## 🐞 Bugs and feedback
-
-* **Issues:** https://github.com/kvmy666/duoStatusBar/issues — a log is worth more than a description.
-  You can share one straight from the app's **About** section.
-* **Telegram:** [@kvmy1](https://t.me/kvmy1)
-
-## 💜 Support
-
-If Duo Status Bar makes you smile every time you glance at your phone:
+If you like the app, you can support the developer:
 [Buy Me a Coffee](https://www.buymeacoffee.com/kroomfahd) or [PayPal](https://paypal.me/kroomfahd).
-Thank you. 💜
-
-## Credits
-
-* The element's geometry was informed by [`lingyired/status-trio`](https://github.com/lingyired/status-trio)
-  and the author's own screenshots. What was reused and what was not is written down in
-  `docs/references.md`.
-* Built on [Rive](https://rive.app), [LSPosed](https://github.com/LSPosed/LSPosed) and AndroidX / Compose.
 
 ## License
 
-GPL-3.0 — see [LICENSE](LICENSE).
+GPL-3.0. See [LICENSE](LICENSE).
