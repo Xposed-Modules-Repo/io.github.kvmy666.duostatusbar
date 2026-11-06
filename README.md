@@ -1,15 +1,14 @@
 # Duo Status Bar
 
-[![Downloads](https://img.shields.io/github/downloads/kvmy666/duoStatusBar/total?label=downloads)](https://github.com/kvmy666/duoStatusBar/releases)
-[![Latest release](https://img.shields.io/github/v/release/kvmy666/duoStatusBar)](https://github.com/kvmy666/duoStatusBar/releases)
+[![Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkvmy666%2FduoStatusBar%2Fmain%2Fdocs%2Fbadges%2Fdownloads.json&query=%24.downloads&label=Downloads&color=blue&logo=github)](https://github.com/kvmy666/duoStatusBar/releases)
+[![Latest release](https://badgen.net/github/release/kvmy666/duoStatusBar)](https://github.com/kvmy666/duoStatusBar/releases)
 [![Android 13+](https://img.shields.io/badge/Android-13%2B-3ddc84)](https://developer.android.com)
 
 Duo Status Bar replaces the battery, Wi-Fi and mobile signal icons in your status bar with one clean,
 animated indicator.
 
 It is an LSPosed module. It does not modify system files. It only hides the icons it replaces and draws
-the new indicator. You can turn it off at any time, and your original icons come back exactly as they
-were.
+the new indicator.
 
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/kvmy666/duoStatusBar@main/docs/media/status-bar.png" width="360" alt="Duo Status Bar in the status bar">
@@ -31,26 +30,30 @@ were.
 
 The module is off until you turn it on. Nothing changes before that.
 
-## Settings
+## Supported UIs
 
-- **Battery icon** - show or hide the percentage, change the size, and move the position.
-- **Animations** - turn animations on or off, and set the speed.
-- **Appearance** - icon colour, smooth graphics, the clock font, and what appears in the middle.
-- **Status bar icons** - keep your other icons visible beside the indicator, or hide them.
-- **Tap actions** - optional. Handled by the Auto Expand module.
-- **About** - see the module status and send a report.
+| UI | Support |
+| --- | --- |
+| OnePlus OxygenOS 16 | ✅ |
+| Xiaomi HyperOS 3 | ✅ |
+
+## Customization
+
+| Default | Default · Invert center |
+|:---:|:---:|
+| <img src="docs/media/custom-default.png" width="160" alt="Default Duo design"> | <img src="docs/media/custom-default-invert.png" width="160" alt="Default Duo design with invert center"> |
+| **Two SIM** | **Two SIM · Invert center** |
+| <img src="docs/media/custom-dual.png" width="160" alt="Two SIM Duo design"> | <img src="docs/media/custom-dual-invert.png" width="160" alt="Two SIM Duo design with invert center"> |
 
 Changing the size needs a System UI restart. The app has a button for it.
 
-## Turn it off
+## PHDP integration
 
-Use the switch in the app, or run one of these commands:
+Duo can show download progress from PHDP on the ring.
 
-```text
-adb shell settings put global duo_statusbar_stage 0   # off
-adb shell settings put global duo_statusbar_stage 1   # simple drawing, no native code
-adb shell settings put global duo_statusbar_stage 2   # full animation
-```
+1. Install [PHDP](https://github.com/hxreborn/punch-hole-download-progress/releases/latest).
+2. In PHDP, open **System → Integrations** and choose **Duo**.
+3. Start a download. Progress appears on the Duo ring.
 
 ## If something goes wrong
 
