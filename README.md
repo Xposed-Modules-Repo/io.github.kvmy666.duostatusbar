@@ -10,8 +10,19 @@ animated indicator.
 It is an LSPosed module. It does not modify system files. It only hides the icons it replaces and draws
 the new indicator.
 
+An optional iOS 27 status bar mode is included: stacked dual SIM in iPhone order, 5G placement, extra
+icons hidden, sizes taken from the host clock, per-icon size and offset sliders, and charging colours.
+
+## Duo Status Bar
+
 <p align="center">
   <img src="https://cdn.jsdelivr.net/gh/kvmy666/duoStatusBar@main/docs/media/status-bar.png" width="360" alt="Duo Status Bar in the status bar">
+</p>
+
+## iOS 27 Status Bar
+
+<p align="center">
+  <img src="docs/media/ios-status-bar.png" width="360" alt="iOS 27 status bar mode">
 </p>
 
 ## Requirements
